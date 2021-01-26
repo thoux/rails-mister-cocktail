@@ -8,7 +8,7 @@
   <% @cocktails.each do |cocktail| %>
     <div class="col">
       <div class="card" style="width: 18rem;">
-        <%= resize_image(cocktail.image_url) %>
+
         <div class="card-body">
           <h5 class="card-title"><%= cocktail.name %></h5>
           <%= link_to 'Voir', cocktail, class: "btn btn-primary" %>
