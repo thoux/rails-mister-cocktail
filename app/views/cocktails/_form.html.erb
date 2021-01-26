@@ -1,5 +1,5 @@
 <%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :image_url %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :name %>
-  <%= f.submit "Créer un formulaire" %>
+  <%= f.submit "Créer un cocktail" %>
 <% end %>
