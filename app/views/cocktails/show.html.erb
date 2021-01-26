@@ -1,0 +1,17 @@
+<h1><%= @cocktail.name %></h1>
+<p>Find me in app/views/cocktails/show.html.erb</p>
+
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= @cocktail.name %></h5>
+    <% @cocktail.doses.each do |dose| %>
+    <h3 class="card-text"><%= dose.ingredient.name %></h3>
+    <p class="card-text"><%= dose.description %></p>
+    <%= link_to 'Supprimer cette dose', dose_path(dose), method: :delete %>
+    <% end %>
+  </div>
+  <%= link_to 'Ajouter une dose', new_cocktail_dose_path(@cocktail) %>
+  <%= link_to 'Revenir', cocktails_path %>
+</div>
