@@ -1,14 +1,35 @@
-<h1>Tous les cocktails</h1>
+
+<h2>Chercher un cocktail dans la liste</h2>
+<div id="container">
+    <div class="panel-block">
+        <input type="text" id="search" class="form-control" placeholder="Nom du cocktail... (ex: margarita)">
+    </div>
+
+      <div class="cards" id="results" >
+      </div>
+
+    <div class="panel-block mt-2">
+      <button id="reset" class="btn btn-primary">
+        Effacer la recherche
+      </button>
+    </div>
+</div>
+
+<hr>
+
+<h2>Tous les cocktails</h2>
+
+
 <div class="row row-cols-1 row-cols-md-3">
   <% @cocktails.each do |cocktail| %>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <%= cl_image_tag cocktail.photo.key, class:"img-fluid" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= cocktail.name %></h5>
-          <%= link_to 'Voir', cocktail, class: "btn btn-primary" %>
-        </div>
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <%= display_picture(cocktail) %>
+      <div class="card-body">
+        <h5 class="card-title"><%= cocktail.name %></h5>
+        <%= link_to 'Voir', cocktail, class: "btn btn-primary" %>
       </div>
     </div>
+  </div>
   <% end %>
 </div>
